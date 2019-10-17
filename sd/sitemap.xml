@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>http://studga.wohlnet.ru/</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://studga.wohlnet.ru/about/</loc>
+</url>
+<url>
+  <loc>http://studga.wohlnet.ru/about/whatsit</loc>
+</url>
+<url>
+  <loc>http://studga.wohlnet.ru/about/target</loc>
+</url>
+<url>
+  <loc>http://studga.wohlnet.ru/about/howwork</loc>
+</url>
+<url>
+  <loc>http://studga.wohlnet.ru/about/changelog</loc>
+</url>
+<url>
+  <loc>http://studga.wohlnet.ru/about/thanks</loc>
+</url>
+<url>
+  <loc>http://studga.wohlnet.ru/d/chgr_help.html</loc>
+  <lastmod>2013-08-29T14:40:41+00:00</lastmod>
+</url>
+<url>
+  <loc>http://studga.wohlnet.ru/d/chgr</loc>
+</url>
+<url>
+  <loc>http://studga.wohlnet.ru/d/chlcr</loc>
+</url>
+<url>
+  <loc>http://studga.wohlnet.ru/m/chgr</loc>
+</url>
+<url>
+  <loc>http://studga.wohlnet.ru/excels/new/</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://studga.wohlnet.ru/excels/loaded/</loc>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>http://studga.wohlnet.ru/excels/backup/</loc>
+  <changefreq>always</changefreq>
+</url>
+</urlset>

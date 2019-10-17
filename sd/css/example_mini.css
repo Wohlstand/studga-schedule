@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+
+table{border-collapse:collapse;border-spacing:0;}
+
+#exContent,#exCont{margin:0 auto;width:900px}
+
+h1,h2{margin:0 0 7px;color:#00C;font-family:'Times New Roman',Georgia,serif;text-shadow:1px 1px 1px #8F8E70;line-height:120%}
+
+.clr{display:inline}
+
+a,a:link{color:#00C;text-decoration:none;outline:0}
+
+a:visited{color:#00A}
+
+a:hover{color:#000;text-decoration:underline}
+
+a:active{color:#C03;text-decoration:none}

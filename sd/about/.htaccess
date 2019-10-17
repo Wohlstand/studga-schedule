@@ -1,0 +1,5 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteBase /about/
+RewriteRule ^(.*)$ index.php?page=$1 [QSA]

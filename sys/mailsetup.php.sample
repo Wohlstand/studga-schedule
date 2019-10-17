@@ -1,0 +1,16 @@
+<?php
+
+$mailsetup['server']   = "<smtp server>";
+$mailsetup['port']     = 25;
+$mailsetup['login']    = "<sender login>";
+$mailsetup['password'] = "<sender password>";
+
+$mailsetup['namefrom'] = "<sender name>";
+$mailsetup['sendfrom'] = "<sender email>";
+
+$mailsetup['replyname'] = $mailsetup['namefrom'];
+$mailsetup['replymail'] = $mailsetup['sendfrom'];
+
+$mailsetup['nameto']   = "<destination name>";
+$mailsetup['sendto']   = "<destination email>";
+

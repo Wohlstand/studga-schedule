@@ -1,0 +1,7 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^/m/about/index.php?page=(.*)$ /m/about/$1
+
+RewriteBase /m/about/
+RewriteRule ^(.*)$ index.php?page=$1 [QSA]

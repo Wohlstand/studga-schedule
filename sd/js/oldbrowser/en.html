@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+	<title>Your browser is outdated!</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="jquery-1.9.1.min.js"></script>
+	<script>
+	jQuery(function($)
+	{
+		if (navigator.userAgent.indexOf('Win') == -1)
+		{
+			// No IE for this OS at all
+			$('li.ie8').hide().next().hide();
+			return;
+		}
+		var nt = navigator.userAgent.match(/Windows NT (\d+)/i);
+		if (!nt || parseInt(nt[1]) < 6)
+		{
+			// No new version of IE for this OS
+			$('li.ie8 h2').text('The new Internet Explorer is not available for your system');
+			$('li.ie8 .descriptiontext span').text('Unfortunately the new Internet Explorer is not available for your system. To install Internet Explorer 9 and above you must be running Windows 7 and above. You should update your operating system or use a different browser.');
+			$('li.ie8 .descriptiontext a').text('More about Internet Explorer');
+		}
+	});
+	</script>
+</head> 
+<body>
+	<div id="old"> 
+		<div id="header">
+			<h1>Your browser is outdated!</h1>
+			<font>You are using an outdated version of Internet Explorer. This version does not support many modern technologies, that’s why a lot of pages are displayed incorrectly, but the main thing is that not all options of different websites can work properly. Here are some of modern browsers for you to choose. You can download them for free, they are easy to install and easy to use. If you wish to download one of the below stated browsers all your bookmarks and passwords will be transferred from your current browser, you will not lose anything.</font>
+		</div> 
+	
+		<ul id="modern-browser"> 
+			<li class="firefox"> 
+				<h2>Mozilla Firefox</h2> 
+				<div class="descriptiontext"> 
+					It is one of the most popular and flexible browsers. The browser can be set up according to different tastes of different users with the help of numerous themes and add-ons for every occasion which you can find at the add-ins official website.
+					<ul class="file"> 
+						<li style="padding-left: 0px;"><a href="http://www.mozilla.org/firefox/">Download Mozilla Firefox</a></li> 
+					</ul> 
+				</div> 
+			</li> 
+
+			<hr class="delim" />
+			
+			<li class="chrome"> 
+				<h2>Google Chrome</h2> 
+				<div class="descriptiontext"> 
+					It is new, but already quite popular browser produced by Google Company. Has a very simple and convenient interface. If you need a browser that contains no special features, Google Chrome would be the best choice for you.
+					<ul class="file"> 
+						<li style="padding-left: 0px;"><a href="http://www.google.com/chrome/">Download Google Chrome</a></li>
+					</ul> 
+				</div> 
+			</li>
+			
+			<hr class="delim" />
+			
+			<li class="opera"> 
+				<h2>Opera</h2> 
+				<div class="descriptiontext"> 
+					This browser has always been positioned as a very handy and fast one. It is equipped with utility programs to speed up loading of pages, this is especially important for users with slow Internet connection. Although the browser can be an excellent choice for every user.
+					<ul class="file"> 
+						<li class="v9" style="padding-left: 0px;"><a href="http://www.opera.com/">Download Opera</a></li>
+					</ul> 
+				</div> 
+			</li>
+			
+			<hr class="delim" />
+			
+			<li class="ie8"> 
+				<h2>The new Internet Explorer</h2> 
+				<div class="descriptiontext">
+					<span>The browser produced by Microsoft Corporation. It is free for everybody who wants to download it and also can be freely distributed. If you don’t know such words as “browser” or “Internet Explorer” then go and install this program.</span>
+					<ul class="file"> 
+						<li class="microsoft" style="padding-left: 0px;"><a href="http://www.microsoft.com/rus/windows/internet-explorer/">Download Internet Explorer</a></li> 
+					</ul> 
+				</div> 
+			</li>
+			
+		</ul> 
+	</div>
+
+	<!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter16941031 = new Ya.Metrika({id:16941031, enableAll: true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/16941031" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

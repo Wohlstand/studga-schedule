@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /scripts/
+Disallow: /d/oneday*
+Disallow: /d/full*
+Disallow: /d/getlinks.php*
+Disallow: /m/oneday*
+Disallow: /excels/new/?*
+Disallow: /excels/loaded/?*
+Disallow: /excels/backup/?*
+Disallow: /d/lection_info.php*
+Disallow: /m/lection_info.php*
+Host: sd.studga.ru

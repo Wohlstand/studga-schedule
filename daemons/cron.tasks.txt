@@ -1,0 +1,5 @@
+0	9,13,20	*	9-12,1-6	1-6	/Server/Server_Files/WebHosting/studga.ru/daemons/sh/mstuca_file.sh > /dev/null 2>&1
+0	10,14,21	*	9-12,1-6	1-6	/Server/Server_Files/WebHosting/studga.ru/daemons/sh/mstuca_db.sh > /Server/Server_Files/WebHosting/studga.ru/logs/CheckDB_LOG_last.txt
+0	20	*	*	7	/Server/Server_Files/WebHosting/studga.ru/daemons/sh/mstuca_file.sh > /dev/null 2>&1
+0	21	*	*	7	/Server/Server_Files/WebHosting/studga.ru/daemons/sh/mstuca_db.sh > /Server/Server_Files/WebHosting/studga.ru/logs/CheckDB_LOG_last.txt
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk"> 
+<head> 
+	<title>Ваш браузер застарів!</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="jquery-1.9.1.min.js"></script>
+	<script>
+	jQuery(function($)
+	{
+		if (navigator.userAgent.indexOf('Win') == -1)
+		{
+			// No IE for this OS at all
+			$('li.ie8').hide().next().hide();
+			return;
+		}
+		var nt = navigator.userAgent.match(/Windows NT (\d+)/i);
+		if (!nt || parseInt(nt[1]) < 6)
+		{
+			// No new version of IE for this OS
+			$('li.ie8 h2').text('Новий Internet Explorer недоступний для вашої системи');
+			$('li.ie8 .descriptiontext span').text('На жаль, для вашої операційної системи нова версія Internet Explorer недоступна. Для встановлення Internet Explorer 9 і вище у вас повинна бути встановлена ​​Windows 7 і вище. Вам варто оновити ОС або скористатися іншим браузером.');
+			$('li.ie8 .descriptiontext a').text('Дізнатися докладніше про Internet Explorer');
+		}
+	});
+	</script>
+</head> 
+<body>
+	<div id="old"> 
+		<div id="header">
+			<h1>Ваш браузер застарів!</h1>
+			<font>Ви користуєтеся застарілою версією браузера Internet Explorer. Дана версія браузера не підтримує багато сучасних технологій, через що багато сторінок відображається некоректно, а головне - на сайтах можуть працювати не всі функції. У зв'язку з цим на Ваш розсуд надаються більш сучасні браузери. Всі вони безкоштовні, легко встановлюються і прості у використанні. При переході на будь-який із нижчезазначених браузерів всі ваші закладки та паролі будуть перенесені з поточного браузера, ви нічого не втратите.</font>
+		</div> 
+	
+		<ul id="modern-browser"> 
+			<li class="firefox"> 
+				<h2>Mozilla Firefox</h2> 
+				<div class="descriptiontext"> 
+					Один з найпоширеніших і гнучких браузерів. Браузер може бути налаштований під себе на будь-який смак за допомогою величезного числа доповнень на всі випадки життя і тем оформлення, які ви знайдете на офіційному сайті доповнень.
+					<ul class="file"> 
+						<li style="padding-left: 0px;"><a href="http://www.mozilla.org/firefox/">Перейти до завантаження Mozilla Firefox</a></li> 
+					</ul> 
+				</div> 
+			</li> 
+
+			<hr class="delim" />
+			
+			<li class="chrome"> 
+				<h2>Google Chrome</h2> 
+				<div class="descriptiontext"> 
+					Новий, але вже досить популярний браузер від гіганта пошукової індустрії, компанії Google. Володіє дуже простим і зручним інтерфейсом. Якщо вам потрібен тільки браузер без спеціальних функцій - для вас Google Chrome стане кращим вибором.
+					<ul class="file"> 
+						<li style="padding-left: 0px;"><a href="http://www.google.com/chrome/">Перейти до завантаження Google Chrome</a></li>
+					</ul> 
+				</div> 
+			</li>
+			
+			<hr class="delim" />
+			
+			<li class="opera"> 
+				<h2>Opera</h2> 
+				<div class="descriptiontext"> 
+					Браузер Opera завжди позиціонувався, як дуже зручний і швидкий. Має внутрішні утиліти для прискорення завантаження сторінок, особливо актуально для користувачів з повільним інтернетом. Хоча відмінно підійде і будь-яким іншим користувачам.
+					<ul class="file"> 
+						<li class="v9" style="padding-left: 0px;"><a href="http://www.opera.com/">Перейти до завантаження Opera</a></li>
+					</ul> 
+				</div> 
+			</li>
+			
+			<hr class="delim" />
+			
+			<li class="ie8"> 
+				<h2>Новий Internet Explorer</h2> 
+				<div class="descriptiontext">
+					<span>Сучасна версія браузера від компанії Microsoft. Безкоштовно надається всім бажаючим і вільний для розповсюдження. Якщо слова «браузер» і «Internet Explorer» для вас не знайомі, встановіть цю програму.</span>
+					<ul class="file"> 
+						<li class="microsoft" style="padding-left: 0px;"><a href="http://www.microsoft.com/rus/windows/internet-explorer/">Перейти до завантаження Internet Explorer</a></li> 
+					</ul> 
+				</div> 
+			</li>
+			<hr class="delim" />
+		</ul> 
+		<center><a style="font-size: 10px;" href="http://phpbbex.com/forum/viewtopic.php?t=60">Встановити повідомлення про застарілий браузер на ваш сайт</a></center>
+	</div>
+
+	<!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter16941031 = new Ya.Metrika({id:16941031, enableAll: true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/16941031" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

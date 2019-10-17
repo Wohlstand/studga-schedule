@@ -1,0 +1,13 @@
+type	data
+room	room-id
+lector	lector-id
+flow	flow-id	fac-id	grp-number	lsubgrp		esubgrp
+
+Coockie array:
+r;123|r;24|l;34|f;8;3;2;3;0
+
+Main array:
+Favorites[x][y]
+
+x - explore by |
+y - explore by ;

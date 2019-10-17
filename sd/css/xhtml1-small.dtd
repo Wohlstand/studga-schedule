@@ -1,0 +1,16 @@
+<!ELEMENT img EMPTY>
+<!ATTLIST img
+  %attrs;
+  src         %URI;          #REQUIRED
+  alt         %Text;         #REQUIRED
+  name        NMTOKEN        #IMPLIED
+  longdesc    %URI;          #IMPLIED
+  height      %Length;       #IMPLIED
+  width       %Length;       #IMPLIED
+  usemap      %URI;          #IMPLIED
+  ismap       (ismap)        #IMPLIED
+  align       %ImgAlign;     #IMPLIED
+  border      %Length;       #IMPLIED
+  hspace      %Pixels;       #IMPLIED
+  vspace      %Pixels;       #IMPLIED
+  >

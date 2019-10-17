@@ -1,0 +1,64 @@
+#nav         { width: 100%; background-repeat: repeat-x; background-attachment: scroll; 
+               color: #000080; font-size: 10pt; font-family: Tahoma; 
+               background-image: url('images/nav_.png');
+                background-repeat: repeat-x; 
+               border-top-style: solid; border-top-width: 0px; 
+               border-bottom-style: solid; border-bottom-width: 0px; 
+               padding-top: 0px; padding-bottom: 6px; background-position: top;}
+               
+#tabnav{height: 20px;margin: 0;padding-left: 10px; word-wrap: none; min-width: 170px;}
+#tabnav li {margin: 0; padding: 0; display: inline; list-style-type: none; word-wrap: nowrap;}
+#tabnav a:link, #tabnav a:visited { float: left; background-repeat: repeat; background-attachment: scroll; 
+               font-size: 10pt; line-height: 14px; text-decoration: none; 
+               color: #000080; font-family: Tahoma; margin-right: 4px; 
+               padding-left: 10px; padding-right: 10px; padding-top: 6px; 
+               padding-bottom: 2px; background-position: 0px 50%;
+               background-repeat: repeat-x;
+	       }
+#tabnav a.active:link, #tabnav a.active:visited {
+		background-attachment: scroll;
+		color: #000080;
+		font-size: 10pt;
+		font-family: Tahoma; 
+               border-style: groove; border-width: 0px; padding-left: 10px; 
+               padding-right: 10px; padding-top: 5px; padding-bottom: 5px; 
+               background-position: 0px 50%;
+               background-image: url("images/activebutton_.png");
+               background-repeat: repeat-x; 
+               }
+#tabnav a:hover { background-attachment: 
+               scroll; color: #000080; font-size: 10pt; font-family: Tahoma; 
+               border: 0 inset #000000; padding-left: 10px; padding-right: 
+               10px; padding-top: 6px; padding-bottom: 2px;
+               background-image: url("images/selectbutton_.png");
+               background-repeat: repeat-x; 
+               background-position: 0px 50% ;}
+input.mod    { font-family: helvetica; font-size: 10pt; background-color: #C5E7FE; 
+               background-repeat: repeat; background-attachment: scroll; 
+               color: #000080; border: 1px solid #000000; padding: 1px; 
+               background-position: 0% 50% ;}
+input.mod:hover { font-family: helvetica; font-size: 10pt; background-color: #9DD5FD; 
+               background-repeat: repeat; background-attachment: scroll; 
+               color: #000080; border: 1px solid #000000; padding: 1px; 
+               background-position: 0% 50%;}
+.subbar      { width: 100%; color: #0000EA; background-repeat: 
+               repeat; font-size: 8pt; border-top-style: solid; 
+               border-top-width: 1px; padding-top: 3px; padding-bottom: 3px; 
+               background-position: 0% 50%; }
+.subbarLinks a { color: #000080; text-decoration: none; font-size: 8pt;
+		padding-left: 3px; padding-right: 2px;
+		padding-top: 3px; padding-bottom: 3px; 
+		background-position: 
+               0% 50%; }
+.subbarLinks a:hover { background-attachment: 
+               scroll; color: #000080; font-size: 8pt; padding-left: 3px; 
+               padding-right: 2px; padding-top: 3px; padding-bottom: 3px; 
+               background-image: url("images/selectbutton_.png");
+               background-repeat: repeat-x; 
+               background-position: 0% 50%; }
+.subbarSelected { background-repeat: repeat; color: #3366CC; 
+               font-size: 8pt;
+               padding-left: 0px; padding-right: 0px; 
+               padding-top: 3px; padding-bottom: 3px;
+               background-position: 
+               0% 50%; }

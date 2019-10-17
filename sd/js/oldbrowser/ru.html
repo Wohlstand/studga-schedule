@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru"> 
+<head> 
+	<title>Ваш браузер устарел!</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="jquery-1.9.1.min.js"></script>
+	<script>
+	jQuery(function($)
+	{
+		if (navigator.userAgent.indexOf('Win') == -1)
+		{
+			// No IE for this OS at all
+			$('li.ie8').hide().next().hide();
+			return;
+		}
+		var nt = navigator.userAgent.match(/Windows NT (\d+)/i);
+		if (!nt || parseInt(nt[1]) < 6)
+		{
+			// No new version of IE for this OS
+			$('li.ie8 h2').text('Новый Internet Explorer недоступен для вашей системы');
+			$('li.ie8 .descriptiontext a').text('Узнать подробнее об Internet Explorer');
+			$('li.ie8 .descriptiontext span').html('К сожалению, для вашей операционной системы новая версия Internet Explorer недоступна. Для установки Internet Explorer 9 и выше у вас должна быть установлена Windows 7 и выше. Вам следует обновить ОС или воспользоваться другим браузером. Но если вы не хотите этого делать, вы можете установить плагин <a href="http://www.google.com/chromeframe">Google Chrome Frame</a> — в таком случае сайт сможет работать корректно и в старых версиях Internet Explorer.');
+		}
+	});
+	</script>
+</head>
+<body>
+	<div id="old"> 
+		<div id="header">
+			<h1>Ваш браузер устарел!</h1>
+			<font>Вы пользуетесь устаревшей версией браузера Internet Explorer. Данная версия браузера не поддерживает многие современные технологии, из-за чего многие страницы отображаются некорректно, а главное — на сайтах могут работать не все функции. В связи с этим на Ваш суд представляются более современные браузеры. Все они бесплатны, легко устанавливаются и просты в использовании. При переходе на любой нижеуказанный браузер все ваши закладки и пароли будут перенесены из текущего браузера, вы ничего не потеряете.</font>
+		</div> 
+	
+		<ul id="modern-browser"> 
+			<li class="firefox"> 
+				<h2>Mozilla Firefox</h2> 
+				<div class="descriptiontext"> 
+					Один из самых распространенных и гибких браузеров. Браузер может быть настроен под себя на любой вкус при помощи огромного числа дополнений на все случаи жизни и тем оформления, которые вы найдете на официальном сайте дополнений.
+					<ul class="file"> 
+						<li style="padding-left: 0px;"><a href="http://www.mozilla.org/firefox/">Перейти к загрузке Mozilla Firefox</a></li> 
+					</ul> 
+				</div> 
+			</li> 
+
+			<hr class="delim" />
+			
+			<li class="chrome"> 
+				<h2>Google Chrome</h2> 
+				<div class="descriptiontext"> 
+					Новый, но уже достаточно популярный браузер от гиганта поисковой индустрии, компании Google. Обладает очень простым и удобным интерфейсом. Если вам нужен просто браузер без специальных функций — для вас Google Chrome станет лучшим выбором.
+					<ul class="file"> 
+						<li style="padding-left: 0px;"><a href="http://www.google.com/chrome/">Перейти к загрузке Google Chrome</a></li>
+					</ul> 
+				</div> 
+			</li>
+			
+			<hr class="delim" />
+			
+			<li class="opera"> 
+				<h2>Opera</h2> 
+				<div class="descriptiontext"> 
+					Браузер Opera всегда позиционировался, как очень удобный и быстрый. Имеет внутренние утилиты для ускорения загрузки страниц, особенно актуально для пользователей с медленным интернетом. Хотя отлично подойдет и любым другим пользователям.
+					<ul class="file"> 
+						<li class="v9" style="padding-left: 0px;"><a href="http://www.opera.com/">Перейти к загрузке Opera</a></li>
+					</ul> 
+				</div> 
+			</li>
+			
+			<hr class="delim" />
+			
+			<li class="ie8"> 
+				<h2>Новый Internet Explorer</h2> 
+				<div class="descriptiontext">
+					<span>Современная версия браузера от компании Microsoft. Бесплатно предоставляется всем желающим и свободен для распространения. Если слова «браузер» и «Internet Explorer» для вас незнакомы, установите эту программу.</span>
+					<ul class="file"> 
+						<li class="microsoft" style="padding-left: 0px;"><a href="http://www.microsoft.com/rus/windows/internet-explorer/">Перейти к загрузке Internet Explorer</a></li> 
+					</ul> 
+				</div> 
+			</li>
+			<hr class="delim" />
+		</ul>
+		<center><a style="font-size: 10px;" href="http://phpbbex.com/forum/viewtopic.php?t=60">Установить уведомление об устаревшем браузере на ваш сайт</a></center>
+	</div>
+
+	<!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter16941031 = new Ya.Metrika({id:16941031, enableAll: true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/16941031" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+
+</body> 
+</html>

@@ -1,0 +1,29 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+# RewriteCond %{REMOTE_ADDR} !^172.16.255.252$
+# RewriteCond %{REMOTE_ADDR} !^2001:470:1f15:942:5053:ed30:9d82:1b18$
+# RewriteCond %{REQUEST_URI} !/sorry_works\.html$
+# RewriteCond %{REQUEST_URI} !\.(jpg|jpeg|png|gif|css|ico)$
+# RewriteRule ^(.*)$  /sorry_works\.html [L]
+
+RewriteRule ^about/index.php?page=(.*)$ /about/$1
+RewriteRule ^/m/about/index.php?page=(.*)$ /m/about/$1
+
+RewriteRule 	^m$ 		m/index.php [QSA,L]
+RewriteRule 	^m/$ 		m/index.php [QSA,L]
+RewriteRule 	^m/oneday$ 	m/OneDay.php [QSA,L]
+RewriteRule 	^m/chgr$ 	m/forstudent.php [QSA,L]
+RewriteRule 	^m/chgrm$ 	m/forstudent_lite.php [QSA,L]
+RewriteRule 	^m/chlcr$ 	m/forlectors.php [QSA,L]
+RewriteRule 	^OneDay.php$	m/oneday [QSA,L]
+
+RewriteRule 	^d/oneday$ 	d/OneDay.php [QSA,L]
+RewriteRule 	^d/full$ 	d/full.php [QSA,L]
+RewriteRule 	^d/chgr$ 	d/forstudent.php [QSA,L]
+RewriteRule 	^d/chlcr$ 	d/forlectors.php [QSA,L]
+RewriteRule 	^d/chroom$ 	d/rooms.php [QSA,L]
+RewriteRule 	^d/sched$ 	d/sched.php [QSA,L]
+RewriteRule 	^d/OneDay_full.php$ 	d/OneDay.php [QSA,L]
+RewriteRule 	^OneDay_full.php$	d/oneday [QSA,L]
+
