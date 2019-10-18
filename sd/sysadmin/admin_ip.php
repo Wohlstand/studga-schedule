@@ -23,7 +23,7 @@ if(
 {
     header("HTTP/1.0 404 Not Found");
     header("Content-type: text/html; charset: UTF-8;");
-    echo "<body>Ты ошибся пейджем, курица!</body></html>";
+    echo "<html><body>Ты ошибся пейджем, курица!<br>" . $_SERVER['REMOTE_ADDR'] . "</body></html>";
     exit;
 }
 
