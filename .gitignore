@@ -22,3 +22,4 @@ stats/
 document_errors/
 logs_sd/
 public_*html
+.idea/
