@@ -324,21 +324,21 @@ CREATE TABLE `sent_info` (
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`127.0.0.1` PROCEDURE `Flows_ClearEmpties`()
+CREATE  PROCEDURE `Flows_ClearEmpties`()
     NO SQL
     COMMENT 'Удаляет пустые потоки, у которых нет расписаний'
 DELETE FROM `schedule_flows` WHERE id_flow NOT IN (SELECT id_flow FROM `schedule__maindata` WHERE `schedule__maindata`.id_flow=`schedule_flows`.id_flow)$$
 DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`127.0.0.1` PROCEDURE `Flows_CountEmpties`()
+CREATE  PROCEDURE `Flows_CountEmpties`()
     NO SQL
     COMMENT 'Показывает количество потоков без расписаний'
 SELECT count(*) FROM `schedule_flows` WHERE id_flow NOT IN (SELECT id_flow FROM `schedule__maindata` WHERE `schedule__maindata`.id_flow=`schedule_flows`.id_flow)$$
 DELIMITER ;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`127.0.0.1` PROCEDURE `Flows_CountReal`()
+CREATE  PROCEDURE `Flows_CountReal`()
     NO SQL
     COMMENT 'Показывает количетсво непустых потоков'
 SELECT count(*) FROM `schedule_flows` WHERE id_flow IN (SELECT id_flow FROM `schedule__maindata` WHERE `schedule__maindata`.id_flow=`schedule_flows`.id_flow)$$
