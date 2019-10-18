@@ -68,7 +68,7 @@ if($act=="GetFlows")
 else
 if($act == "GetGroups")
 {
-	$query = mysqlold_query("SELECT * FROM vmkss.schedule_flows WHERE id_flow='".intval($_POST['flow_id'])."' LIMIT 1;");
+	$query = mysqlold_query("SELECT * FROM `schedule_flows` WHERE id_flow='".intval($_POST['flow_id'])."' LIMIT 1;");
 	$flow = mysqlold_fetch_array($query);
 
 	$query = mysqlold_query("SELECT * FROM schedule_daycount ORDER BY dayend DESC LIMIT 1");
