@@ -10,13 +10,15 @@ require_once("../sys/db.php");
 
 $readonly = false;
 
+$ipAddr = $_SERVER['REMOTE_ADDR'];
+
 $isLocalHost = false;
-//$isLocalHost = strstr($_SERVER['REMOTE_ADDR'], "127.0.0.1");
+//$isLocalHost = strstr($ipAddr, "127.0.0.1");
 
 if(!$isLocalHost &&
-   !strstr($_SERVER['REMOTE_ADDR'], "172.16.") &&
-   !strstr($_SERVER['REMOTE_ADDR'], "2001:470:1f15:942:") &&
-   !strstr($_SERVER['REMOTE_ADDR'], "87.229.194.178"))
+   !strstr($ipAddr, "172.16.") &&
+   !strstr($ipAddr, "2001:470:1f15:942:") &&
+   !strstr($ipAddr, "87.229.194.178"))
 {
 	$readonly = true;
 	//echo "<body>Ты ошибся страницей, курица!</body></html>";
@@ -64,7 +66,7 @@ if(!$readonly)
 }
 else
 {
-    echo "<small>Ваш IP-адрес " . $_SERVER['REMOTE_ADDR'] . "</small>";
+    echo "<small>Ваш IP-адрес " . $ipAddr . "</small>";
 }
 ?>
 </div>
