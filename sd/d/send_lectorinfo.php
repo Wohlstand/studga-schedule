@@ -60,7 +60,7 @@ else
 <input name="object_id" type="hidden" value="<?= intval($_GET['obj_id']); ?>" />
 <p>Полные ФИО<br /><input value="<?= ($formdata != "") ? base64_decode($formfields[1]) : "" ?>" name="fullname" type="text" style="width: 488px" />
 </p>
-<p>Учётая степень<br /><input value="<?= ($formdata != "") ? base64_decode($formfields[2]) : "" ?>" name="scince_rank" type="text" style="width: 488px" /></p>
+<p>Учёная степень<br /><input value="<?= ($formdata != "") ? base64_decode($formfields[2]) : "" ?>" name="scince_rank" type="text" style="width: 488px" /></p>
 <p>Комментарий (в т.ч. сообщение об увольнении преподавателя из университета)<br />
 <textarea name="comment" rows="6" cols="150" style="width: 488px; height: 96px;"><?= ($formdata != "") ? htmlspecialchars(base64_decode($formfields[3])) : "" ?></textarea></p>
     <p>
