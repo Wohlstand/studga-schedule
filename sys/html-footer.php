@@ -17,7 +17,7 @@
 <div class="garant"></div>
 </div>
 <div class="footer">
-<p>Все права защищены © 2012-<?=date("Y");?> ЭВМ МГТУ ГА</p>
+<p>Все права защищены © 2012-<?=date("Y");?> WohlstandFox</p>
 <p style="text-align: center;"><a href="/?lite">мобильная версия</a>&nbsp;&nbsp;&nbsp;<a href="/feedback/">обратная связь</a></p>
 <p style="text-aligh:right;">
 
