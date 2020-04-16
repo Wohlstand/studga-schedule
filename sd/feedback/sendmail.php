@@ -18,12 +18,12 @@ require_once dirname(__FILE__) . '/../securimage/securimage.php';
 $securimage = new Securimage();
 $capchaIsValid = $securimage->check($capchaCode);
 
-if( ($capchaCode == CAPCHA_NOTHING) || (!$capchaIsPregValid) || (!$capchaIsValid) )
+if($capchaCode == CAPCHA_NOTHING || !$capchaIsPregValid || !$capchaIsValid)
 {
   	$errorcode = substr_replace($errorcode, "1", 0, 1);
 }
 
-function contains($needle, $haystack)
+function contains($haystack, $needle)
 {
     return strpos($haystack, $needle) !== false;
 }
@@ -57,6 +57,7 @@ if(isset($_POST['messg'])) /* Никакого HTML быть не должно �
     if(contains($m, "<span") && contains($m, "</span>"))
         die("Ваше сообщение как бы отправлено, но что-то тут не так...");
 }
+
 
 /* Поля-ловушки для ботов */
 
