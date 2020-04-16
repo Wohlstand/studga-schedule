@@ -19,35 +19,30 @@ $error = 0;
 <div id=errors align="center">
 <?php
 if(!empty($_GET['error']))
-$error = strrev(sprintf("%10b", $_GET['error']));
+    $error = strrev(sprintf("%10b", $_GET['error']));
 else
-$error = "0000000000";
+    $error = "0000000000";
 ?>
-<?php if($error!="0000000000") { ?>
+<?php if($error != "0000000000") { ?>
 <div style="background-color: #FFD2D2; border: 6px ridge #FF6C6C; color: #FF2222; width: 661px; text-align: left;">
 <ul>
 <?php
 
-if($error[0]=="1")
-{
+if($error[0] == "1")
     echo "<li>Неправильно введён код с картинки</li>\n";
-}
-if($error[1]=="1")
-{
+
+if($error[1] == "1")
     echo "<li>Не указано Ваше имя</li>\n";
-}
-if($error[2]=="1")
-{
+
+if($error[2] == "1")
     echo "<li>Не указан обратный адрес</li>\n";
-}
-if($error[3]=="1")
-{
+
+if($error[3] == "1")
     echo "<li>e-mail введён не правильно</li>\n";
-}
-if($error[4]=="1")
-{
+
+if($error[4] == "1")
     echo "<li>Пожалуйста, введите Ваше сообщение</li>\n";
-}
+
 ?>
 </ul>
 </div>
@@ -59,9 +54,7 @@ else
     $formdata = "";
 
 if($formdata!="")
-{
     $formfields = explode("|", $formdata);
-}
 else
     $formfields = "00000000000000000";
 ?>

@@ -23,29 +23,51 @@ if( ($capchaCode == CAPCHA_NOTHING) || (!$capchaIsPregValid) || (!$capchaIsValid
   	$errorcode = substr_replace($errorcode, "1", 0, 1);
 }
 
+function contains($needle, $haystack)
+{
+    return strpos($haystack, $needle) !== false;
+}
+
 /* Поля-ловушки для ботов */
 if($_POST['url'] != "")
 {
-    die("Ha-ha! (C) Nelson Mandela Muntz");
+    die("Ваше сообщение отправлено!");
 }
+
 if($_POST['phone'] != "")
 {
-    die("Ha-ha! (C) Nelson Mandela Muntz");
+    die("Ваше сообщение отправлено!");
 }
+
 if($_POST['company'] != "")
 {
-    die("Ha-ha! (C) Nelson Mandela Muntz");
+    die("Ваше сообщение отправлено!");
 }
+
+if(isset($_POST['messg'])) /* Никакого HTML быть не должно в письмах! */
+{
+    $m = $_POST['messg'];
+
+    if(contains($m, "<p>") && contains($m, "</p>"))
+        die("Ваше сообщение как бы отправлено, но что-то тут не так...");
+
+    if(contains($m, "<a") && contains($m, "</a>"))
+        die("Ваше сообщение как бы отправлено, но что-то тут не так...");
+
+    if(contains($m, "<span") && contains($m, "</span>"))
+        die("Ваше сообщение как бы отправлено, но что-то тут не так...");
+}
+
 /* Поля-ловушки для ботов */
 
 
-if($_POST['sendername']=="")
+if($_POST['sendername'] == "")
 {
 	$errorcode = substr_replace($errorcode, "1", 1, 1);
 }
 
 
-if($_POST['mailfrom']=="")
+if($_POST['mailfrom'] == "")
 {
 	$errorcode = substr_replace($errorcode, "1", 2, 1);
 }
@@ -59,7 +81,7 @@ if(isset($_POST['mailfrom']) && ($_POST['mailfrom']!=""))
 	}
 }
 
-if($_POST['messg']=="")
+if($_POST['messg'] == "")
 {
 	$errorcode = substr_replace($errorcode, "1", 4, 1);
 }
