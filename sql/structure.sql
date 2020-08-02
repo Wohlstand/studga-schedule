@@ -1,3 +1,43 @@
+-- MySQL dump 10.16  Distrib 10.1.44-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- ------------------------------------------------------
+-- Server version	10.0.38-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `mail_list`
+--
+
+DROP TABLE IF EXISTS `mail_list`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mail_list` (
+  `id_mail` int(100) NOT NULL AUTO_INCREMENT,
+  `id_flow` int(100) unsigned DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `unsubscr_key` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_mail`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Список рассылки об обновлении расписаний';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `mstuca_groups`
+--
+
+DROP TABLE IF EXISTS `mstuca_groups`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mstuca_groups` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -6,7 +46,15 @@ CREATE TABLE `mstuca_groups` (
   `title_3` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=4096;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `mstuca_sessions`
+--
+
+DROP TABLE IF EXISTS `mstuca_sessions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mstuca_sessions` (
   `username` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Логин',
   `session_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'MD5-хэшики',
@@ -16,7 +64,15 @@ CREATE TABLE `mstuca_sessions` (
   `loghash` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Хэш суммы логина и пароля',
   PRIMARY KEY (`session_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AVG_ROW_LENGTH=204;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `mstuca_users`
+--
+
+DROP TABLE IF EXISTS `mstuca_users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mstuca_users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Счётчик',
   `username` varchar(255) NOT NULL COMMENT 'Имя пользователя',
@@ -43,7 +99,15 @@ CREATE TABLE `mstuca_users` (
   `flow` int(100) unsigned DEFAULT '0' COMMENT 'Привязка к потоку',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=1260;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `news_feed`
+--
+
+DROP TABLE IF EXISTS `news_feed`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `news_feed` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -51,7 +115,15 @@ CREATE TABLE `news_feed` (
   `content` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `pages`
+--
+
+DROP TABLE IF EXISTS `pages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pages` (
   `id` int(99) NOT NULL,
   `mass` int(4) unsigned zerofill DEFAULT '0000',
@@ -63,14 +135,30 @@ CREATE TABLE `pages` (
   `main` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AVG_ROW_LENGTH=12288;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `pages_books`
+--
+
+DROP TABLE IF EXISTS `pages_books`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pages_books` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `book_name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `book_title` varchar(1024) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AVG_ROW_LENGTH=16384;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `schedule_daycount`
+--
+
+DROP TABLE IF EXISTS `schedule_daycount`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_daycount` (
   `id_day` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Семестры. Указывает начало отсчёта чёт/нечёт-а',
   `couples` int(1) unsigned DEFAULT '0' COMMENT 'Чёт-1/нечёт0 первой недели',
@@ -78,17 +166,30 @@ CREATE TABLE `schedule_daycount` (
   `dayend` date DEFAULT NULL COMMENT 'Дата окончания семестра',
   `desc` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_day`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `schedule_disciplyne`
+--
+
+DROP TABLE IF EXISTS `schedule_disciplyne`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_disciplyne` (
   `id_disciplyne` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `dysc_name` varchar(255) DEFAULT NULL COMMENT 'Название предмета',
   PRIMARY KEY (`id_disciplyne`)
-) ENGINE=InnoDB AUTO_INCREMENT=1508 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=2340;
+) ENGINE=InnoDB AUTO_INCREMENT=1560 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=2340;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-INSERT INTO `schedule_disciplyne` (`id_disciplyne`,`dysc_name`) VALUES
-('0', '*Отменяется*');
+--
+-- Table structure for table `schedule_facult`
+--
 
+DROP TABLE IF EXISTS `schedule_facult`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_facult` (
   `id_facult` int(99) NOT NULL AUTO_INCREMENT,
   `fac_name` varchar(255) DEFAULT NULL COMMENT 'Полное название факультета',
@@ -102,73 +203,30 @@ CREATE TABLE `schedule_facult` (
   `fac_gr_names` varchar(255) DEFAULT NULL COMMENT 'Список имён групп',
   PRIMARY KEY (`id_facult`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-INSERT INTO `schedule_facult` (`id_facult`,`fac_name`,`fac_name_s`,`fac_dean`,`fac_dean_tel`,`fac_depdean`,`fac_meth_tel`,`fac_deanrooms`,`fac_desc`,`fac_gr_names`) VALUES
-(1,'Механический факультет','М',NULL,NULL,NULL,NULL,NULL,NULL,'\"АБ\" \"АБб\" \"М\" \"Мб\" \"БТП\" \"БТПб\" \"ГСМ\" \"МАГ\" \"МБ\" \"МБб\" \"МГ\" \"МГб\" \"МАГб\" \"ММаг\" \"ЭВС\" \"ЭВСм\"'),
-(2,'Факультет авиационных систем и комплексов','ФАСК',NULL,NULL,NULL,NULL,NULL,'','\"АК\" \"АКб\" \"РС\" \"РСб\" \"РТ\" \"РТб\" \"АКМаг\" \"ЭВСак\"'),
-(3,'Факультет прикладной математики и вычислительной техники','ФПМиВТ',18,NULL,2,NULL,NULL,NULL,'\"ЭВМ\" \"ЭВМб\" \"БИ\" \"БИб\" \"ПМ\" \"ПМб\" \"БИТ\" \"БИТб\"'),
-(4,'Факультет управления на воздушном транспорте','ФУВТ',NULL,NULL,NULL,NULL,NULL,NULL,'\"ОП\" \"ОПБ\" \"ОПб\" \"ОБП\" \"ОБПб\" \"ОПбЭС\" \"СО\" \"СОб\" \"УВД\" \"УВДб\" \"УВДБ\" \"ЭК\" \"ЭКб\" \"ЭКБ\" \"ЭКБб\"'),
-(5,'Заочный факультет','ЗФ',NULL,NULL,NULL,NULL,NULL,NULL,'\"АКЗб\" \"МЗб\" \"РТз\"');
+--
+-- Table structure for table `schedule_facult_spec`
+--
 
+DROP TABLE IF EXISTS `schedule_facult_spec`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_facult_spec` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `fac_id` int(11) NOT NULL,
   `spec_name` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COMMENT='Специальности по факультетам';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-INSERT INTO `schedule_facult_spec` (`id`,`fac_id`,`spec_name`) VALUES
-(1,1,'АБ'),
-(2,1,'АБб'),
-(3,1,'М'),
-(4,1,'Мб'),
-(5,1,'БТП'),
-(6,1,'БТПб'),
-(7,1,'ГСМ'),
-(8,1,'МАГ'),
-(9,1,'МБ'),
-(10,1,'МБб'),
-(11,1,'МГ'),
-(12,1,'МГб'),
-(13,1,'МАГб'),
-(14,1,'ММаг'),
-(15,1,'ЭВС'),
-(16,1,'ЭВСм'),
-(17,2,'АК'),
-(18,2,'АКб'),
-(19,2,'РС'),
-(20,2,'РСб'),
-(21,2,'РТ'),
-(22,2,'РТб'),
-(23,2,'АКМаг'),
-(24,2,'ЭВСак'),
-(25,3,'ЭВМ'),
-(26,3,'ЭВМб'),
-(27,3,'БИ'),
-(28,3,'БИб'),
-(29,3,'ПМ'),
-(30,3,'ПМб'),
-(31,3,'БИТ'),
-(32,3,'БИТб'),
-(33,4,'ОП'),
-(34,4,'ОПБ'),
-(35,4,'ОПб'),
-(36,4,'ОБП'),
-(37,4,'ОБПб'),
-(38,4,'ОПбЭС'),
-(39,4,'СО'),
-(40,4,'СОб'),
-(41,4,'УВД'),
-(42,4,'УВДб'),
-(43,4,'УВДБ'),
-(44,4,'ЭК'),
-(45,4,'ЭКб'),
-(46,4,'ЭКБ'),
-(47,4,'ЭКБб'),
-(48,5,'АКЗб'),
-(49,5,'МЗб'),
-(50,5,'РТз');
+--
+-- Table structure for table `schedule_files`
+--
 
+DROP TABLE IF EXISTS `schedule_files`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_files` (
   `filename` varchar(255) NOT NULL,
   `hash` varchar(255) DEFAULT NULL,
@@ -179,7 +237,15 @@ CREATE TABLE `schedule_files` (
   `synonym` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`filename`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `schedule_flows`
+--
+
+DROP TABLE IF EXISTS `schedule_flows`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_flows` (
   `id_flow` int(11) NOT NULL AUTO_INCREMENT,
   `id_courator` varchar(255) DEFAULT NULL COMMENT 'Кураторы групп',
@@ -192,25 +258,30 @@ CREATE TABLE `schedule_flows` (
   `is_updating` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Флаг процесса обновления расписания',
   `latest_upd` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Последнее обновление базы данных',
   PRIMARY KEY (`id_flow`)
-) ENGINE=InnoDB AUTO_INCREMENT=220 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=8192;
+) ENGINE=InnoDB AUTO_INCREMENT=224 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=8192;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `schedule_houses`
+--
+
+DROP TABLE IF EXISTS `schedule_houses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_houses` (
   `id_house` int(29) NOT NULL AUTO_INCREMENT,
   `house_name` varchar(255) NOT NULL,
   PRIMARY KEY (`id_house`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-INSERT INTO `schedule_houses` (`id_house`,`house_name`) VALUES
-(1,'Первый корпус'),
-(2,'Второй корпус'),
-(3,'Третий корпус'),
-(4,'Четвёртый корпус'),
-(5,'Пятый корпус'),
-(6,'Главный \"Новый\" корпус'),
-(7,'Учебный Авиационно-Технический Центр МГТУ ГА'),
-(8,'УБЭРТОС'),
-(0,'(Не определён)');
+--
+-- Table structure for table `schedule_lectors`
+--
 
+DROP TABLE IF EXISTS `schedule_lectors`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_lectors` (
   `id_lector` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `lcr_fullname` varchar(255) DEFAULT NULL COMMENT 'Полное имя преподавателя',
@@ -222,16 +293,32 @@ CREATE TABLE `schedule_lectors` (
   `lcr_offsite` text COMMENT 'Официальный сайт преподавателя',
   PRIMARY KEY (`id_lector`),
   KEY `id_lector` (`id_lector`)
-) ENGINE=InnoDB AUTO_INCREMENT=590 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=5461;
+) ENGINE=InnoDB AUTO_INCREMENT=602 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=5461;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `schedule_links`
+--
+
+DROP TABLE IF EXISTS `schedule_links`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_links` (
   `id` int(99) NOT NULL AUTO_INCREMENT,
   `link` varchar(2048) DEFAULT NULL,
   `descr` text,
   `synonym` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=502 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=516 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `schedule_ltype`
+--
+
+DROP TABLE IF EXISTS `schedule_ltype`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_ltype` (
   `id_ltype` int(11) NOT NULL AUTO_INCREMENT,
   `lt_name` varchar(255) DEFAULT NULL,
@@ -239,22 +326,15 @@ CREATE TABLE `schedule_ltype` (
   PRIMARY KEY (`id_ltype`),
   KEY `id_ltype` (`id_ltype`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=5461;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-INSERT INTO `schedule_ltype` (`id_ltype`,`lt_name`,`lt_name_sh`) VALUES
-(0,'*Отмена занятия*','*Отмена занятия*'),
-(1,'Лекция','Лекция'),
-(2,'Практическое занятие','Пр.Зан.'),
-(3,'Лабораторная работа','Лаб.раб.'),
-(4,'Спорт','Спорт'),
-(5,'Зачёт','Зачёт'),
-(6,'Диффиренциальный зачёт','Дифф.Зачёт'),
-(7,'Консультация','Консультация'),
-(8,'Экзамен','Экзамен'),
-(9,'Семинар','Семинар'),
-(10,'Час наставника','Час наставника'),
-(11,'Зачёт / Диф.зачёт','Зачет(диф.зач.)'),
-(12,'Защита КП(КР)','Защита КП(КР)');
+--
+-- Table structure for table `schedule_profs`
+--
 
+DROP TABLE IF EXISTS `schedule_profs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_profs` (
   `id_prof` int(99) NOT NULL AUTO_INCREMENT,
   `prof_name` varchar(255) DEFAULT NULL COMMENT 'Название специальности',
@@ -265,7 +345,15 @@ CREATE TABLE `schedule_profs` (
   `prof_desc` text COMMENT 'Описание специальности',
   PRIMARY KEY (`id_prof`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Специальности';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `schedule_rooms`
+--
+
+DROP TABLE IF EXISTS `schedule_rooms`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_rooms` (
   `id_room` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Комнаты, аудитории, где проходят занятия',
   `room_number` varchar(255) DEFAULT NULL COMMENT 'Номер корпуса',
@@ -275,8 +363,16 @@ CREATE TABLE `schedule_rooms` (
   `room_220v` text COMMENT 'Наличие рабочих розеток 220v',
   `room_photo` varchar(255) DEFAULT NULL COMMENT 'Фотография из аудитории',
   PRIMARY KEY (`id_room`)
-) ENGINE=InnoDB AUTO_INCREMENT=277 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=780;
+) ENGINE=InnoDB AUTO_INCREMENT=282 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=780;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `schedule_students`
+--
+
+DROP TABLE IF EXISTS `schedule_students`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_students` (
   `id_student` int(11) NOT NULL AUTO_INCREMENT,
   `id_group` int(11) DEFAULT NULL,
@@ -289,7 +385,15 @@ CREATE TABLE `schedule_students` (
   `st_photo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_student`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `schedule_subgroups`
+--
+
+DROP TABLE IF EXISTS `schedule_subgroups`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_subgroups` (
   `id_subgroup` int(11) NOT NULL AUTO_INCREMENT,
   `id_group` varchar(255) DEFAULT NULL,
@@ -299,7 +403,15 @@ CREATE TABLE `schedule_subgroups` (
   KEY `id_subgroup` (`id_subgroup`),
   KEY `id_group` (`id_group`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=2048;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `schedule_ver`
+--
+
+DROP TABLE IF EXISTS `schedule_ver`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule_ver` (
   `DateOfVer` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `version` varchar(255) DEFAULT NULL,
@@ -308,7 +420,15 @@ CREATE TABLE `schedule_ver` (
   `visible` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`DateOfVer`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `sent_info`
+--
+
+DROP TABLE IF EXISTS `sent_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sent_info` (
   `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
   `type` varchar(255) DEFAULT NULL,
@@ -320,30 +440,105 @@ CREATE TABLE `sent_info` (
   `ip` varchar(255) DEFAULT NULL,
   `useragent` varchar(2048) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `statistic`
+--
 
-DELIMITER $$
-CREATE  PROCEDURE `Flows_ClearEmpties`()
+DROP TABLE IF EXISTS `statistic`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `statistic` (
+  `id_stat` int(100) NOT NULL AUTO_INCREMENT,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `gr_name` varchar(50) NOT NULL,
+  `IP` varchar(45) NOT NULL,
+  `AGENT` varchar(2048) NOT NULL,
+  `ver` varchar(255) DEFAULT NULL,
+  `counts` int(99) DEFAULT '1',
+  PRIMARY KEY (`id_stat`)
+) ENGINE=MyISAM AUTO_INCREMENT=1017003 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping routines for database '????????'
+--
+/*!50003 DROP PROCEDURE IF EXISTS `Flows_ClearEmpties` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE PROCEDURE `Flows_ClearEmpties`()
     NO SQL
     COMMENT 'Удаляет пустые потоки, у которых нет расписаний'
-DELETE FROM `schedule_flows` WHERE id_flow NOT IN (SELECT id_flow FROM `schedule__maindata` WHERE `schedule__maindata`.id_flow=`schedule_flows`.id_flow)$$
+DELETE FROM `schedule_flows` WHERE id_flow NOT IN (SELECT id_flow FROM `schedule__maindata` WHERE `schedule__maindata`.id_flow=`schedule_flows`.id_flow) ;;
 DELIMITER ;
-
-DELIMITER $$
-CREATE  PROCEDURE `Flows_CountEmpties`()
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `Flows_CountEmpties` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE PROCEDURE `Flows_CountEmpties`()
     NO SQL
     COMMENT 'Показывает количество потоков без расписаний'
-SELECT count(*) FROM `schedule_flows` WHERE id_flow NOT IN (SELECT id_flow FROM `schedule__maindata` WHERE `schedule__maindata`.id_flow=`schedule_flows`.id_flow)$$
+SELECT count(*) FROM `schedule_flows` WHERE id_flow NOT IN (SELECT id_flow FROM `schedule__maindata` WHERE `schedule__maindata`.id_flow=`schedule_flows`.id_flow) ;;
 DELIMITER ;
-
-DELIMITER $$
-CREATE  PROCEDURE `Flows_CountReal`()
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `Flows_CountReal` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE PROCEDURE `Flows_CountReal`()
     NO SQL
     COMMENT 'Показывает количетсво непустых потоков'
-SELECT count(*) FROM `schedule_flows` WHERE id_flow IN (SELECT id_flow FROM `schedule__maindata` WHERE `schedule__maindata`.id_flow=`schedule_flows`.id_flow)$$
+SELECT count(*) FROM `schedule_flows` WHERE id_flow IN (SELECT id_flow FROM `schedule__maindata` WHERE `schedule__maindata`.id_flow=`schedule_flows`.id_flow) ;;
 DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+--
+-- Table structure for table `schedule__maindata`
+--
+
+DROP TABLE IF EXISTS `schedule__maindata`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schedule__maindata` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `id_disciplyne` int(11) unsigned DEFAULT NULL COMMENT 'Название предмета',
@@ -379,5 +574,8 @@ CREATE TABLE `schedule__maindata` (
   KEY `onlydays` (`onlydays`),
   KEY `couples` (`couples`),
   CONSTRAINT `id_disciplyne` FOREIGN KEY (`id_disciplyne`) REFERENCES `schedule_disciplyne` (`id_disciplyne`)
-) ENGINE=InnoDB AUTO_INCREMENT=17584 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=1820;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=1820;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+
+-- Dump completed on 2020-08-01 13:14:33
