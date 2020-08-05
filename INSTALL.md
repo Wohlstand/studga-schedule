@@ -13,4 +13,7 @@
 - CMake 3.6+
 - GCC или CLang с поддержкой C++14
 - libmysqlclient
+- git
+
+Для работы системы, нужно собрать из исходников дополнительный модуль и запускать его после модуля-скачивателя: https://github.com/Wohlstand/studga-xls2db
 
